@@ -1,4 +1,4 @@
-import React,{ useState, useEffect }  from 'react';
+import React,{ useState }  from 'react';
 import {Form, Button} from 'react-bootstrap';
 import { Link, BrowserRouter } from 'react-router-dom';
 import axios from 'axios';
@@ -11,7 +11,7 @@ export default function Register(){
             lastName: "",
             username: "",
             password: "",
-            userEmail: ""
+            email: ""
             
     }
     )
@@ -25,7 +25,7 @@ export default function Register(){
 
     function handleSubmit(e) {
         console.log(input)
-        // axios.post('http://localhost:8081/register/')
+        axios.post('http://localhost:8081/register/')
         e.preventDefault(); // prevent default action of page refresh 
     }
 
