@@ -18,7 +18,7 @@ export default class Products extends React.Component {
     render() {
         return (
             <div>
-                <h1 className = "header" >Products</h1>
+                {/* <h1 className = "header" >Products</h1> */}
                 <div className="container">
                 {
                     this.state.products.map((products,i) => {
@@ -29,7 +29,7 @@ export default class Products extends React.Component {
                             {/* <Link to= {`/wines/${wine.id}`}> */}
                                 <img className = "product-image" src={products.image} alt="product" /> 
                                 {/* </Link> */}
-                                <h2>{products.prodName}</h2>                               
+                                <h6 className = "product-name">{products.prodName}</h6>                               
                             </li>
                         </div>
                         )
