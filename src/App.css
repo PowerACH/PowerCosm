@@ -26,6 +26,7 @@
   text-align: center;
   justify-content: space-around;
   margin-top: 60px;
+  
 }
 
 .header {
@@ -39,6 +40,11 @@
 }
 
 .product-image {
-  height: 50vh;
-  /* width: 20px; */
+  height: 230px;
+  border: 2px solid grey;
+  width: 200px;
 }
+
+/* .product-name {
+  text
+} */
