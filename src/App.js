@@ -3,26 +3,18 @@ import './App.css';
 import NavBar from './components/NavBar';
 import LogIn from './components/LogIn';
 import Register from './components/Register';
+import Home from './components/Home'
 import { BrowserRouter, Switch, Route, } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <NavBar />
-      <Register />
-    
-
       <BrowserRouter>
+      <NavBar />
         <Switch>
-              <Route path="/home">
-                <Home />
-              </Route>
-              <Route path="/LogIn">
-                <LogIn />
-              </Route>
-              <Route path="/register">
-                <Register />
-              </Route>
+              <Route exact path="/" component = {Home} />
+              <Route path="/LogIn" component = {LogIn} />
+              <Route path="/register" component = {Register} />w
             </Switch>
       </BrowserRouter>
   </div>
