@@ -30,6 +30,7 @@ export default function Register(){
     }
 
         return (
+            <div className = "login-wrapper">
             <div className = "loginContainer" >
                 <div className = "header">Register</div>
                     <Form>
@@ -67,9 +68,9 @@ export default function Register(){
                             placeholder="email@email.com"
                             onChange={handleChange}
                              />
-                            <Form.Text className="text-muted">
+                            {/* <Form.Text className="text-muted">
                             We'll never share your email with anyone else.
-                            </Form.Text>
+                            </Form.Text> */}
                         </Form.Group>
 
                         <Form.Group controlId="password">
@@ -82,24 +83,22 @@ export default function Register(){
                         </Form.Group>
                         
                         <Button 
-                        variant="primary" 
+                        variant="outline-secondary" 
                         type="submit"
                         onClick = {handleSubmit}
                         >
                             Register
                         </Button>
 
-                        <BrowserRouter>
                         <Link to = "/LogIn" >
                         <Button 
-                        variant="primary" 
-                        type="submit"
+                        variant="outline-secondary" 
                         >
                             Need to Log In?
                         </Button>
                         </Link>
-                        </BrowserRouter>
                         </Form>
                 </div>
+            </div>
         )
     }
