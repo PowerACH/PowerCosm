@@ -76,7 +76,7 @@
 
 .header-photo {
   height: 436px;
-  opacity: 70%;
+  opacity: 80%;
 }
 
 .home-top-row-header {
@@ -84,4 +84,31 @@
   font-size:50px;
   margin-top: 150px;
   color: white;
+}
+
+.home-second-row {
+  background-color: black;
+}
+
+.home-image-left {
+  padding: 20px;
+  opacity: 80%;
+}
+
+/*  */
+.loginContainer {
+  width: 50%;
+  margin-left: 25%;
+  padding: 10%;
+  
+}
+
+.login-wrapper {
+  background-color: #DCAE63;
+  width: 100vw;
+  height: 100vh;
+}
+
+.log-in-button {
+  margin-left: 15px;
 }
