@@ -10,10 +10,10 @@ export default function NavBar() {
             <Navbar.Collapse id="responsive-navbar-nav">
                 
                 <Nav className="ml-auto">
-                    <Nav.Link href="/">HOME</Nav.Link>
-                    <Nav.Link href="/LogIn">LOGIN</Nav.Link>
-                    <Nav.Link href="/Shop">SHOP</Nav.Link>
-                    <Nav.Link href="#Cart">CART</Nav.Link>
+                    <Nav.Link href="/">home</Nav.Link>
+                    <Nav.Link href="/LogIn">login</Nav.Link>
+                    <Nav.Link href="/Shop">shop</Nav.Link>
+                    <Nav.Link href="#Cart">cart</Nav.Link>
                 </Nav>
                 
             </Navbar.Collapse>
