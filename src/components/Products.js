@@ -1,6 +1,7 @@
 import React from 'react';
 import '../App.css';
 import axios from 'axios';
+import { Link } from 'react-router-dom'
 
 
 export default class Products extends React.Component {
@@ -26,9 +27,9 @@ export default class Products extends React.Component {
                         return (
                             <div>
                             <li className="products" key={i} >
-                            {/* <Link to= {`/wines/${wine.id}`}> */}
+                            <Link to= {`/products/${products.prodName}`}>
                                 <img className = "product-image" src={products.image} alt="product" /> 
-                                {/* </Link> */}
+                                </Link>
                                 <h6 className = "product-name">{products.prodName}</h6>                               
                             </li>
                         </div>
