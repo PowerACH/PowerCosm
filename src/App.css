@@ -55,16 +55,33 @@
   text-align: left;
 }
 
-
+/*  */
 .navBar {
   background-color: black;
-  /* height: 130px; */
 }
 
 .brand-Logo {
   font-size: 40px;
 }
 
-.nav-Link {
-  
+.home-top-row {
+  border: 2px solid black;
+  height: 440px;
+  background-color: #DCAE63;
+}
+
+.top-header {
+  font-family: 'Homemade Apple', cursive;
+}
+
+.header-photo {
+  height: 436px;
+  opacity: 70%;
+}
+
+.home-top-row-header {
+  text-align: center;
+  font-size:50px;
+  margin-top: 150px;
+  color: white;
 }
