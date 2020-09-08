@@ -4,16 +4,16 @@ import '../App.css';
 
 export default function NavBar() {
     return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-            <Navbar.Brand href="/"></Navbar.Brand>
+        <Navbar className = "navBar" collapseOnSelect expand="lg" variant="dark" sticky="top">
+            <Navbar.Brand className = "brand-Logo" href="/">POWER BEAUTY</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 
                 <Nav className="ml-auto">
-                <Nav.Link href="/">Home</Nav.Link>
-                <Nav.Link href="/LogIn">LogIn</Nav.Link>
-                <Nav.Link href="#Shop">Shop</Nav.Link>
-                <Nav.Link href="#Cart">Cart</Nav.Link>
+                    <Nav.Link href="/">HOME</Nav.Link>
+                    <Nav.Link href="/LogIn">LOGIN</Nav.Link>
+                    <Nav.Link href="/Shop">SHOP</Nav.Link>
+                    <Nav.Link href="#Cart">CART</Nav.Link>
                 </Nav>
                 
             </Navbar.Collapse>
