@@ -51,7 +51,7 @@ export default class ProductInfo extends React.Component {
            
             <Container className="container">
             <div className = "">
-                <Link to="/">back</Link>
+                <Link to="/shop">back</Link>
             </div>
                 <h4>{ prod }</h4>
             </Container>
