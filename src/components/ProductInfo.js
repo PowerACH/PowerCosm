@@ -1,13 +1,15 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom'
+import '../App.css'
+import { Container, Col, Row, Button } from 'react-bootstrap';
 
 
 
 //Single Wine Routed Page
 export default class ProductInfo extends React.Component {
     state = {
-        id: [],
+        data: [],
         prodName: []
     }
 
@@ -17,36 +19,42 @@ export default class ProductInfo extends React.Component {
         axios.get('http://localhost:8081/products/' + prodName)
             .then(res => {
                 this.setState({
-                    prodName: res.data
+                    data: res.data
                 })
-                console.log(this.props.match)
+                console.log(this.state.data)
             })
         this.setState({
             prodName: prodName
         })
     }
     render() { 
-        const prod = this.state.id ? (
-            <div className="wine">
-                <img src={this.state.id.picture} alt="wine" />
-                <h4 className = "center"> {this.state.id.name}</h4>
-                <p>{this.state.id.description}</p>
-                <p> Year: {this.state.id.year}</p>
-                <p> Country: {this.state.id.countryy}</p>
-                <p> Region: {this.state.id.region}</p>
-                <p> Price: ${this.state.id.price}</p>
-            </div>
+        const prod = this.state.data ? (
+            <Container className="product" >
+                <Row>
+                    <Col>
+                        <img src={this.state.data.image} alt="product" />
+                    </Col>
+                    <Col>
+                        <h4 className = "prodName"> {this.state.data.prodName}</h4>
+                        <h6>{this.state.data.prodInfo}</h6>
+                        <p> Price: ${this.state.data.price}</p>
+                        <Button variant="primary" size="lg" block>
+                            Add To Cart
+                        </Button>
+                    </Col>
+                </Row>
+            </Container>
         ) : (
-            <div className="center">Loading post...</div>
+            <div className="center">Loading...</div>
         )
         return(
            
-            <div className="container">
-            <div>
+            <Container className="container">
+            <div className = "">
                 <Link to="/">back</Link>
             </div>
                 <h4>{ prod }</h4>
-            </div>
+            </Container>
         )
     }
 }
