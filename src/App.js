@@ -5,6 +5,7 @@ import LogIn from './components/LogIn';
 import Register from './components/Register';
 import Home from './components/Home'
 import { BrowserRouter, Switch, Route, } from 'react-router-dom';
+import ProductInfo from './components/ProductInfo';
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
         <Switch>
               <Route exact path="/" component = {Home} />
               <Route path="/LogIn" component = {LogIn} />
-              <Route path="/register" component = {Register} />w
+              <Route path="/register" component = {Register} />
+              <Route path= "/products/:prodName" component={ProductInfo} /> 
             </Switch>
       </BrowserRouter>
   </div>
