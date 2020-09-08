@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom'
 import '../App.css'
-import { Container, Col, Row, Button } from 'react-bootstrap';
+import { Container, Col, Row, Button, Spinner } from 'react-bootstrap';
 
 
 
@@ -45,7 +45,8 @@ export default class ProductInfo extends React.Component {
                 </Row>
             </Container>
         ) : (
-            <div className="center">Loading...</div>
+            // <div className="center">Loading...</div>
+            <Spinner animation="grow" />
         )
         return(
            
