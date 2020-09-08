@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {Form, Button} from 'react-bootstrap';
+import { Link } from 'react-router-dom'
+import '../App.css'
 
 export default function LogIn() { 
     const [input, setInput] = useState(
@@ -34,8 +36,9 @@ export default function LogIn() {
         }
 
         return (
+        <div className = "login-wrapper">
             <div className = "loginContainer" >
-                <div className = "header">Login</div>
+                {/* <div className = "header">Login</div> */}
                 <div className = "loginContent">
                     
                     <Form>
@@ -61,22 +64,25 @@ export default function LogIn() {
                             <Form.Check type="checkbox" label="Remember Me" />
                         </Form.Group>
                         <Button 
-                        variant="primary" 
+                        className= "log-in-button"
+                        variant="outline-secondary" 
                         type="submit"
                         onClick = {handleSubmit}
                         >
                             Log In
                         </Button>
                         
+                        <Link to = "/register">
                         <Button 
-                        variant="primary" 
+                        variant="outline-secondary" 
                         type="submit"
-                        onClick = {() => ("Register")}
                         >
                             Want to Register?
                         </Button>
+                        </Link>
                         </Form>
                 </div>
             </div>
+         </div>   
         )
     }
