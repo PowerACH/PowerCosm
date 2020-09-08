@@ -19,6 +19,9 @@
   padding: 9px 10px !important;
 }
 
+/* ******************************* */
+
+
 .container {
   display: flex;
   flex-direction: row;
@@ -34,6 +37,9 @@
   
 }
 
+
+/* ********************************* */
+
 .products {
   list-style: none;
   
@@ -45,6 +51,6 @@
   width: 200px;
 }
 
-/* .product-name {
-  text
-} */
+.back-button {
+  text-align: left;
+}
