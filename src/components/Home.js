@@ -2,7 +2,6 @@ import React from 'react'
 import { Row,Col,Button,Image } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Photo from '../assets/head.png'
-import Footer from './Footer'
 
 export default function Home() {
     return (
@@ -25,7 +24,7 @@ export default function Home() {
                 </Col>
                 {/* <Col></Col> */}
             </Row>
-            <Footer />
+            
         </div>
     )
 }
