@@ -95,6 +95,9 @@
 
 .home-second-row {
   background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
 }
 
 .home-image-left {
@@ -133,9 +136,25 @@
 .shop-container {
   display: flex;
   justify-content: space-around;
-  padding-top: 20%;
+  padding-top: 10%;
   padding-bottom: 30%;
   background-color: #DCAE63;
 }
 
+.skin-header{
+  font-family: 'Homemade Apple', cursive;
+  padding-top: 5%;
+}
+
+
+.single-image {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.product {
+  display: flex;
+  justify-content: space-between;
+}
 
