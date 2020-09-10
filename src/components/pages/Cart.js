@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from 'react';
 import axios from 'axios'
-import { Button, Col } from 'react-bootstrap'
+import { Button, Col,Row, Container } from 'react-bootstrap'
 import '../../App.css'
 
 
@@ -38,19 +38,20 @@ export default function Cart() {
     console.log(data)
 
     return (
-    <div className="cart-container">
-        <Col className = "cart-header">
-        <h3 className = "cart-header">Cart</h3>
-        <h6 className = "cart-item-count">Items: {data.length} </h6>
-        </Col>
+    <Container fluid className="cart-container">
+        <div className = "cart-header-content">     
+            <h3 className = "cart-header">Cart</h3> 
+            <h6 className = "cart-item-count">Items: {data.length} </h6>
+        </div>
+        <div className = "cart-content">
         <div className = "cart-left">
             {products}
         </div>
-        
         <div className = "cart-right">
 
         </div>
-    </div>
+        </div>
+    </Container>
     )
 }
 
