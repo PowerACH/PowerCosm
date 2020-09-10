@@ -39,7 +39,7 @@
 }
 
 
-/* ********************************* */
+/* ***************Product Info****************** */
 
 .products {
   list-style: none;
@@ -62,7 +62,7 @@
   text-align: left;
 }
 
-/*  */
+/* ************************************************* */
 .navBar {
   background-color: black;
 }
@@ -161,11 +161,6 @@
 
 /* ***********Cart**************** */
 
-/* .cart-container {
-  width: 100%;
-  display: flex;
-} */
-
 .cart-header-content {
   width: 100%;
   padding: 10px;
@@ -181,12 +176,19 @@
 
 .cart-left {
   border: 2px black solid;
-  float: 50%;
-  width: 50%;
+  /* float: 60%;
+  width: 60%; */
 }
 
 .cart-right {
   border: 2px red solid;
-  float: 50%;
-  width: 50%;
+  /* float: 40%;
+  width: 40%; */
 } 
+
+/* *************Footer************* */
+
+.product-image {
+  height: 15vh;
+  width: 15vw;
+}
