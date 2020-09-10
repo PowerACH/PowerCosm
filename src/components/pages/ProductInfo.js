@@ -1,18 +1,13 @@
-import React, { useEffect, useState} from 'react';
+import React, { useEffect, useState, setInput} from 'react';
 import axios from 'axios';
 import { Link, useParams } from 'react-router-dom'
 import '../../App.css'
-import { Container, Col, Row, Button, Spinner } from 'react-bootstrap';
+import { Container, Col, Button, Spinner } from 'react-bootstrap';
 
 export default function ProductInfo() {
     let { prodName, category } = useParams();
     const [data, setData] = useState([]);
-    const [cartData, setCartData] = setState({
-        prodName: "",
-        price: "",
-        quantity: "",
-        image: ""
-    })
+    const [cartData, setCartData] = useState(0)
 
     const getProductData = async () => {
         const res = await axios.get("http://localhost:8081/" + category + "/" + prodName)
@@ -23,6 +18,29 @@ export default function ProductInfo() {
     useEffect(() => {
         getProductData()
     }, []);
+    
+    const cartItem = {
+        prodName : prodName,
+        price : data.price,
+        quantity : cartData.quantity,
+        image : data.image
+    }
+     console.log(cartItem)
+    function handleChange(e) {
+        const { value, id } = e.target;
+        setCartData({ ...cartData, [id]: value })
+      }
+    
+    function handleSubmit(e) {
+        e.preventDefault();
+        axios.post('http://localhost:8081/cart', cartItem)
+        .then(function(result) {
+            console.log('Logging result ' + result);
+        }, (e) => {
+            console.log(e)
+        })
+        // console.log(input);
+    }
 
         const prod = data ? (
             <Container className="product" >
@@ -33,9 +51,16 @@ export default function ProductInfo() {
                         <h4 className = "prodName"> {data.prodName}</h4>
                         <h6>{data.prodInfo}</h6>
                         <p> Price: ${data.price}</p>
-                        <Button variant="primary" size="lg" block>
+                        
+                        <form onChange = {handleChange} >
+                            <label>Quantity:</label>
+                            <input type="number" id="quantity" name="quantity" min="1" max="5" />
+                        
+                        
+                        <Button onClick = {handleSubmit} variant="primary" size="lg" block>
                             Add To Cart
                         </Button>
+                        </form>
                     </Col>
             </Container>
         ) : (
