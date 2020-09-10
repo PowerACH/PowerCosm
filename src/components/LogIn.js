@@ -24,13 +24,11 @@ export default function LogIn() {
     })
         function handleChange(e) {
             const {value, id } = e.target;
-            console.log(value, id);
             setInput({ ...input, [id]: value })
         }    
 
         //function for submission of form
         function handleSubmit(e) {
-            console.log(input)
             axios.get('http://localhost:8081/login/' + input.username + "/" + input.password )
             e.preventDefault(); // prevent default action of page refresh 
         }
