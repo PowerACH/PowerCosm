@@ -159,3 +159,34 @@
   justify-content: space-between;
 }
 
+/* ***********Cart**************** */
+
+/* .cart-container {
+  width: 100%;
+  display: flex;
+} */
+
+.cart-header-content {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.cart-content {
+  width: 100%;
+  padding: 10px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.cart-left {
+  border: 2px black solid;
+  float: 50%;
+  width: 50%;
+}
+
+.cart-right {
+  border: 2px red solid;
+  float: 50%;
+  width: 50%;
+} 
