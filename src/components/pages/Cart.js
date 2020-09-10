@@ -1,4 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect} from 'react';
+import axios from 'axios'
+import { Button, Col } from 'react-bootstrap'
+import '../../App.css'
+
 
 export default function Cart() {
     
@@ -15,7 +19,7 @@ export default function Cart() {
     }
 
     const deleteData = async () => {
-        const res = await axios.delete("http://localhost:8081/cart/" + prodName);
+        const res = await axios.delete("http://localhost:8081/cart/");
         setData(res.data);
         return res;
     }
@@ -26,18 +30,24 @@ export default function Cart() {
                 <img className = "product-image" src={products.image} alt="product" /> 
                 <h6 className = "product-name">{products.prodName}</h6>
                 <h6>${products.price}</h6>
-                <Button>Delete</Button>                               
+                <Button variant="warning">Delete</Button>                               
             </li>
         </div>
         )
     })
+    console.log(data)
 
     return (
-    <div className="container">
-        <div className = "left">
+    <div className="cart-container">
+        <Col className = "cart-header">
+        <h3 className = "cart-header">Cart</h3>
+        <h6 className = "cart-item-count">Items: {data.length} </h6>
+        </Col>
+        <div className = "cart-left">
             {products}
         </div>
-        <div className = "right">
+        
+        <div className = "cart-right">
 
         </div>
     </div>
