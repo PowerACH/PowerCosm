@@ -61,13 +61,18 @@
 
 .product-image {
   height: 230px;
-  border: 2px solid grey;
   width: 200px;
 }
 
 .product-image:hover {
   opacity: 60%;
 
+}
+
+.product-card {
+  border: 2px rgb(0, 0, 0, .3) solid;
+  margin-bottom: 15px;
+  box-shadow: 0 0 3px #DCAE63, 0 0 5px #DCAE63 ;
 }
 
 .back-button {
@@ -169,4 +174,9 @@
 .cart-product-image {
   height: 131px;;
   width: 129px;
+}
+
+.page-footer {
+  color: white;
+  text-align: center;
 }
