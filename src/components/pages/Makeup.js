@@ -20,7 +20,7 @@ function Makeup() {
 
     const products = makeup.map((products, i) => {
         return (
-        <div key={i}>
+        <div className = "product-card" key={i}>
             <li className="products"  >
             <Link to= {`/product/${products.category}/${products.prodName}`}>
                 <img className = "product-image" src={products.image} alt="product" /> 
