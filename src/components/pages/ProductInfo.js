@@ -1,4 +1,4 @@
-import React, { useEffect, useState, setInput} from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, useParams } from 'react-router-dom'
 import '../../App.css'
@@ -17,7 +17,7 @@ export default function ProductInfo() {
     }
     useEffect(() => {
         getProductData()
-    }, []);
+    });
     
     const cartItem = {
         prodName : prodName,
@@ -25,10 +25,11 @@ export default function ProductInfo() {
         quantity : cartData.quantity,
         image : data.image
     }
-     console.log(cartItem)
+
     function handleChange(e) {
         const { value, id } = e.target;
         setCartData({ ...cartData, [id]: value })
+        console.log(cartData)
       }
     
     function handleSubmit(e) {
@@ -44,12 +45,12 @@ export default function ProductInfo() {
 
         const prod = data ? (
             <Container className="product" >
-                    <Col className = "product-left">
+                    <Col xs = {12} md = {6} className = "product-left">
                         <img className = "single-image" src={data.image} alt="product" />
                     </Col>
                     <Col className = "product-right">
                         <h4 className = "prodName"> {data.prodName}</h4>
-                        <h6>{data.prodInfo}</h6>
+                        
                         <p> Price: ${data.price}</p>
                         
                         <form onChange = {handleChange} >
@@ -61,6 +62,8 @@ export default function ProductInfo() {
                             Add To Cart
                         </Button>
                         </form>
+                        <h4 className = "product-description-header">Description</h4>
+                        <h6>{data.prodInfo}</h6>
                     </Col>
             </Container>
         ) : (
