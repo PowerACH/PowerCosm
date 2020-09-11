@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import '../../App.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom'
+import { Row } from 'react-bootstrap';
 
 
 function Skincare() {
@@ -20,7 +21,7 @@ function Skincare() {
 
     const products = skincare.map((products, i) => {
         return (
-        <div key={i}>
+        <div className = "product-card" key={i}>
             <li className="products"  >
             <Link to= {`/product/${products.category}/${products.prodName}`}>
                 <img className = "product-image" src={products.image} alt="product" /> 
@@ -33,9 +34,10 @@ function Skincare() {
     })
 
     return (
-    <div className="container">
+    
+    <Row className="container">
             {products}
-    </div>
+    </Row>
     )
 }
 
