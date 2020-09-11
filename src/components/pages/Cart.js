@@ -7,9 +7,11 @@ import '../../App.css'
 export default function Cart() {
     
     const [data, setData] = useState ([]);
+    const [total, setTotal] = useState (0)
 
     useEffect(() => {
         getData()
+        getTotal()
     }, [])
 
     const getData = async () => {
@@ -18,39 +20,54 @@ export default function Cart() {
         return res;
     }
 
-    const deleteData = async () => {
-        const res = await axios.delete("http://localhost:8081/cart/");
-        setData(res.data);
+    const getTotal = async () => {
+        const res = await axios.get("http://localhost:8081/cart/total");
+        setTotal(res.data);
         return res;
     }
+
+    const deleteData = async (i) => {
+        console.log(i)
+        await axios.delete("http://localhost:8081/cart/" + i);
+        getData();
+        window.location.reload()
+        
+    }
+
+
     const products = data.map((products, i) => {
         return (
         <div key={i}>
-            <li className="products"  >
-                <img className = "product-image" src={products.image} alt="product" /> 
-                <h6 className = "product-name">{products.prodName}</h6>
-                <h6>${products.price}</h6>
-                <Button variant="warning">Delete</Button>                               
-            </li>
+            <Row className="products"  >
+                <Col>
+                    <img className = "cart-product-image" src={products.image} alt="product" />
+                </Col> 
+                <Col>
+                    <h6 className = "product-name">{products.prodName}</h6>
+                </Col>
+                <Col>
+                    <h6>${products.price}</h6>
+                    <Button onClick = {deleteData.bind(i, products.id)} variant="danger">Delete</Button> 
+                </Col>                         
+            </Row>
         </div>
         )
     })
-    console.log(data)
 
     return (
     <Container fluid className="cart-container">
-        <div className = "cart-header-content">     
-            <h3 className = "cart-header">Cart</h3> 
-            <h6 className = "cart-item-count">Items: {data.length} </h6>
-        </div>
-        <div className = "cart-content">
-        <div className = "cart-left">
+        <Row xs = {12} className = "cart-header-content">     
+            <h3 className = "cart-header">Cart</h3>
+        </Row>
+        <Row className = "cart-content">
+        <Col md = {8} className = "cart-left">
             {products}
-        </div>
-        <div className = "cart-right">
-
-        </div>
-        </div>
+        </Col>
+        <Col className = "cart-right">
+            <h5>Total Items: {data.length} </h5>
+            <h5>Total Price: ${total} </h5>
+        </Col>
+        </Row>
     </Container>
     )
 }
