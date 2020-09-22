@@ -11,7 +11,7 @@ export default function ProductInfo() {
 
 
     const getProductData = async () => {
-        const res = await axios.get("http://localhost:8081/" + category + "/" + prodName)
+        const res = await axios.get("https://powerbeauty.herokuapp.com/" + category + "/" + prodName)
         setData(res.data);
         return res;
         
@@ -35,7 +35,7 @@ export default function ProductInfo() {
     function handleSubmit(e) {
         console.log(cartItem)
         e.preventDefault();
-        axios.post('http://localhost:8081/cart', cartItem)
+        axios.post('https://powerbeauty.herokuapp.com/cart', cartItem)
         .then(function(result) {
            alert("Added to cart!")
         }, (e) => {

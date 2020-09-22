@@ -17,26 +17,26 @@ export default function Cart() {
     }, [])
 
     const getData = async () => {
-        const res = await axios.get("http://localhost:8081/cart");
+        const res = await axios.get("https://powerbeauty.herokuapp.com/cart");
         setData(res.data);
         return res;
     }
 
     const getTotal = async () => {
-        const res = await axios.get("http://localhost:8081/cart/total");
+        const res = await axios.get("https://powerbeauty.herokuapp.com/cart/total");
         setTotal(res.data);
         return res;
     }
 
     const getQuantity = async () => {
-        const res = await axios.get("http://localhost:8081/cart/qty");
+        const res = await axios.get("https://powerbeauty.herokuapp.com/cart/qty");
         setQty(res.data);
         return res;
     }
 
     const deleteData = async (i) => {
         console.log(i)
-        await axios.delete("http://localhost:8081/cart/" + i);
+        await axios.delete("https://powerbeauty.herokuapp.com/cart/" + i);
         getData();
         window.location.reload()
         

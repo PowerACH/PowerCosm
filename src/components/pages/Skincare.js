@@ -13,7 +13,7 @@ function Skincare() {
     }, [])
 
     const getSkincareData = async () => {
-        const res = await axios.get("http://localhost:8081/skincare");
+        const res = await axios.get("https://powerbeauty.herokuapp.com/skincare");
         setSkincare(res.data);
         return res;
     }
