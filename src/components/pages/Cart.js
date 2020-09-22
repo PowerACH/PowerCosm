@@ -8,10 +8,12 @@ export default function Cart() {
     
     const [data, setData] = useState ([]);
     const [total, setTotal] = useState (0)
+    const [qty, setQty] = useState (0)
 
     useEffect(() => {
         getData()
         getTotal()
+        getQuantity()
     }, [])
 
     const getData = async () => {
@@ -23,6 +25,12 @@ export default function Cart() {
     const getTotal = async () => {
         const res = await axios.get("http://localhost:8081/cart/total");
         setTotal(res.data);
+        return res;
+    }
+
+    const getQuantity = async () => {
+        const res = await axios.get("http://localhost:8081/cart/qty");
+        setQty(res.data);
         return res;
     }
 
@@ -43,11 +51,14 @@ export default function Cart() {
                     <img className = "cart-product-image" src={products.image} alt="product" />
                 </Col> 
                 <Col>
-                    <h6 className = "product-name">{products.prodName}</h6>
+                    <span className = "product-name">{products.prodName}</span>
+                </Col>
+                <Col>
+                        <h6>Qty: {products.quantity}</h6> 
                 </Col>
                 <Col>
                     <h6>${products.price}</h6>
-                    <Button onClick = {deleteData.bind(i, products.id)} variant="danger">Delete</Button> 
+                    <Button onClick = {deleteData.bind(i, products.id)} variant="danger">Delete</Button>
                 </Col>                         
             </Row>
         </div>
@@ -64,7 +75,7 @@ export default function Cart() {
             {products}
         </Col>
         <Col className = "cart-right">
-            <h5>Total Items: {data.length} </h5>
+            <h5>Total Items: {qty} </h5>
             <h5>Total Price: ${total} </h5>
         </Col>
         </Row>
