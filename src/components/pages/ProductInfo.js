@@ -9,6 +9,7 @@ export default function ProductInfo() {
     const [data, setData] = useState([]);
     const [cartData, setCartData] = useState(0)
 
+
     const getProductData = async () => {
         const res = await axios.get("http://localhost:8081/" + category + "/" + prodName)
         setData(res.data);
@@ -22,27 +23,27 @@ export default function ProductInfo() {
     const cartItem = {
         prodName : prodName,
         price : data.price,
-        quantity : cartData.quantity,
+        quantity : Number(cartData.quantity),
         image : data.image
     }
 
     function handleChange(e) {
         const { value, id } = e.target;
         setCartData({ ...cartData, [id]: value })
-        console.log(cartData)
       }
     
     function handleSubmit(e) {
+        console.log(cartItem)
         e.preventDefault();
         axios.post('http://localhost:8081/cart', cartItem)
         .then(function(result) {
-            console.log('Logging result ' + result);
+           alert("Added to cart!")
         }, (e) => {
             console.log(e)
         })
-        // console.log(input);
     }
 
+    
         const prod = data ? (
             <Container className="product" >
                     <Col xs = {12} md = {6} className = "product-left">
@@ -54,13 +55,16 @@ export default function ProductInfo() {
                         <p> Price: ${data.price}</p>
                         
                         <form onChange = {handleChange} >
-                            <label>Quantity:</label>
+                            <label>Quantity: </label>
                             <input type="number" id="quantity" name="quantity" min="1" max="5" />
+
+                            <br />
                         
                         
-                        <Button onClick = {handleSubmit} variant="primary" size="lg" block>
+                        <Button onClick = {handleSubmit} variant="primary" size="md" >
                             Add To Cart
                         </Button>
+                        
                         </form>
                         <h4 className = "product-description-header">Description</h4>
                         <h6>{data.prodInfo}</h6>
@@ -70,6 +74,8 @@ export default function ProductInfo() {
             // <div className="center">Loading...</div>
             <Spinner animation="grow" />
         )
+
+        
         return(
            
             <Container className="container">
