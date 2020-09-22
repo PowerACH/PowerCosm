@@ -55,8 +55,7 @@
 
 .products {
   list-style: none;
-  margin-top: 10%;
-  
+  margin-bottom: 3%; 
 }
 
 .product-image {
@@ -90,11 +89,13 @@
   justify-content: space-between;
 }
 
-/*  */
+/* **************************************** BANNER
+******************* */
 
 .banner-container {
   border: 2px solid black;
-  height: 440px;
+  height: 25vh;
+  width: 100%;
   background-color: #DCAE63;
 }
 
