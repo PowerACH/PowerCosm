@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import '../../App.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom'
-import { Row } from 'react-bootstrap';
 
 
 function Skincare() {
@@ -34,10 +33,10 @@ function Skincare() {
     })
 
     return (
-    
-    <Row className="container">
+   
+    <div className="container">  
             {products}
-    </Row>
+    </div>
     )
 }
 
