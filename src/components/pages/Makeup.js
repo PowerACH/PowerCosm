@@ -13,7 +13,7 @@ function Makeup() {
     }, [])
 
     const getMakeupData = async () => {
-        const res = await axios.get("https://powerbeauty.herokuapp.com/api/makeup");
+        const res = await axios.get("https://powerbeauty.herokuapp.com/makeup");
         setMakeup(res.data);
         return res;
     }
