@@ -2,10 +2,10 @@
 
 Power Cosmetics is an app to display skills in Front-end and Back-end functions.
 
-![Home](https://ibb.co/H7DDWwQ)
-![Product List](https://ibb.co/sWP4Ptw)
-![Single Item](https://ibb.co/GxwZQ6W)
-![Cart](https://ibb.co/M6qSfR0)
+![Home](https://i.ibb.co/CB55kCF/sc1.png)
+![Product List](https://i.ibb.co/FHW1Wnw/sc2.png)
+![Single Item](https://i.ibb.co/1vVCGgr/sc3.png)
+![Cart](https://i.ibb.co/dgnMtQY/sc4.png)
 
 ### Technology Used
 
